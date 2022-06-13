@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 12:53:47 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/11 18:45:47 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/13 10:08:58 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ int PhoneBook::GetLastIndex()
     int i = 0;
     for (; i < 8; i++)
     {
-        if (this->contacts[i].first_name == "")
+        if (this->contacts[i].isEmptyContact())
             break;
     }
     return (i);
 
 }
+
 bool    PhoneBook::PrintAllContacts(int index)
 {
     if (index > GetLastIndex())
@@ -30,15 +31,11 @@ bool    PhoneBook::PrintAllContacts(int index)
         std::cout << "Contact Unvailable" << std::endl;
         return false;
     }
-    std::cout << "First name: " << contacts[index].first_name << std::endl;
-    std::cout << "Last name: " << contacts[index].last_name << std::endl;
-    std::cout << "Nickname: " << contacts[index].nickname << std::endl;
-    std::cout << "Phone number: " << contacts[index].phone_number << std::endl;
-    std::cout << "Darkest secret: " << contacts[index].darkest_secret << std::endl;
+    contacts[index].printContacts();
     return true;
 }
 
-void    PhoneBook::AddContact()
+void    PhoneBook::addContact()
 {
     if (GetLastIndex() == 8)
     {
@@ -78,14 +75,5 @@ void    PhoneBook::PrintMenu()
 {
     int index = GetLastIndex() == -1 ? 8 : GetLastIndex();
     for (int i = 0; i < index; i++)
-    {
-        LOG_TRUNC(std::to_string(i + 1));
-        std::cout << " | ";
-        LOG_TRUNC(this->contacts[i].first_name);
-        std::cout << " | ";
-        LOG_TRUNC(this->contacts[i].last_name);
-        std::cout << " | ";
-        LOG_TRUNC(this->contacts[i].nickname);
-        std::cout << std::endl;
-    }
+        contacts[i].printMenu(i);
 }

@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:45:52 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/10 23:08:59 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/12 22:26:34 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main(int argc, char **argv)
         for (int i = 1; i < argc; i++)
             for (int j = 0; argv[i][j]; j++)
                 LOG((char)toupper(argv[i][j]));
-        std::cout << "\n";
+        std::cout << std::endl;
     return (0);
 }

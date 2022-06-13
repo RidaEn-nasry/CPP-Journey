@@ -6,22 +6,22 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 21:22:25 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/11 17:09:51 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/06/13 10:13:41 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 NAME = phonebook
-CC = g++
+CC = c++
 
 SRCS = ./Contacts.cpp\
 		./PhoneBook.cpp\
 		./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
-INCS = -I.
-INCLUDES = Contacts.hpp\
-		PhoneBook.hpp
+INCS = -I./includes
+INCLUDES = ./includes/Contacts.hpp\
+		./includes/PhoneBook.hpp
 
 %.o: %.cpp 
 	$(CC) $(CPPFLAGS) $(INCS) -c -g $< -o $@
