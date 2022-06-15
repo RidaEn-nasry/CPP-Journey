@@ -5,38 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/13 17:16:00 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/14 08:09:11 by ren-nasr         ###   ########.fr        #
+#    Created: 2022/06/15 17:37:12 by ren-nasr          #+#    #+#              #
+#    Updated: 2022/06/15 17:45:54 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+RM = rm -rf
 
-SRCS = ./main.cpp\
-		./Zombie.cpp
-
-CC = clang++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-RM = rm -rf 
-INCS = -I./interface
-INCLUDES = ./interface/Zombie.hpp
+NAME = harlFilter
+SRCS = ./Harl.cpp ./main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = clang++
+INCLUDES = $(INCS)/$(wildcard *.hpp)
 
-%.o: %.cpp
-	$(CC) $(CXXFLAGS) $(INCS) -c $< -o $@
+%.o:%.cpp
+	$(CC) $(CXXFLAGS) -I./interface -c -g $< -o $@
 
 $(NAME): $(OBJS) $(INCLUDES)
 	$(CC) $(OBJS) -o $@
 
-clean: 
+clean:
 	$(RM) $(OBJS)
-
+	
 fclean: clean
 	$(RM) $(NAME)
-
+	
 re: fclean $(NAME)
 
 .PHONY: clean fclean re
-	
+
+
+
 

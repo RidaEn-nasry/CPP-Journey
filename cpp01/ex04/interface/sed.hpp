@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 07:13:21 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 09:38:42 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 11:22:50 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@
 # include <unistd.h>
 # include <cstdio>
 
-int sed(const char *file, const char *str, const char *str2);
+int sed( const char* file, const char* str, const char* str2 );
 
 #endif

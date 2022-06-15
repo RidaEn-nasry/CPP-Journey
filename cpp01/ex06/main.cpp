@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 21:30:10 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 13:07:34 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/15 17:18:26 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/15 17:48:40 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#include <Harl.hpp>
 
-#include <Weapon.hpp>    
+int main( int argc, char** argv ) {
 
-class   HumanB {
-private:
-    std::string _name;
-    Weapon* _weapon;
-
-public:
-    HumanB( std::string name );
-    ~HumanB();
-    HumanB( const HumanB& other ); 
-    HumanB& operator=( const HumanB& other );
-
-    void    attack();
-    void    setWeapon( Weapon& weapon );
-
-};
-
-#endif
+    if (argc != 2) {
+        std::cout << "Usage: ./harlFilter <level>" << std::endl;
+        return (1);
+    }
+    Harl harl;
+    harl.complain( argv[1] );
+    return 0;
+}

@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 12:53:47 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/13 10:08:58 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:11:14 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ int PhoneBook::GetLastIndex()
             break;
     }
     return (i);
-
 }
 
-bool    PhoneBook::PrintAllContacts(int index)
+bool PhoneBook::PrintAllContacts(int index)
 {
     if (index > GetLastIndex())
     {
@@ -35,18 +34,18 @@ bool    PhoneBook::PrintAllContacts(int index)
     return true;
 }
 
-void    PhoneBook::addContact()
+void PhoneBook::addContact()
 {
     if (GetLastIndex() == 8)
     {
         std::cout << "Contact is full" << std::endl;
         contacts[7].GetContacts();
     }
-    else 
-        this->contacts[GetLastIndex()].GetContacts();   
+    else
+        this->contacts[GetLastIndex()].GetContacts();
 }
 
-bool    PhoneBook::SearchContact()
+bool PhoneBook::SearchContact()
 {
     PrintMenu();
     std::string search;
@@ -61,9 +60,9 @@ bool    PhoneBook::SearchContact()
         }
         if (std::stoi(search) < 1 || std::stoi(search) > 8)
         {
-            std::cout << "We run out of phonebooks" << std::endl;     
+            std::cout << "We run out of phonebooks" << std::endl;
             continue;
-        } 
+        }
         if (!PrintAllContacts(std::stoi(search) - 1))
             continue;
         break;
@@ -71,7 +70,7 @@ bool    PhoneBook::SearchContact()
     return true;
 }
 
-void    PhoneBook::PrintMenu()
+void PhoneBook::PrintMenu()
 {
     int index = GetLastIndex() == -1 ? 8 : GetLastIndex();
     for (int i = 0; i < index; i++)

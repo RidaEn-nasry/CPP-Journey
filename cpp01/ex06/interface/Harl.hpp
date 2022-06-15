@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 21:30:10 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 13:07:34 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/15 17:18:07 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/15 17:41:19 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
 
-#include <Weapon.hpp>    
+#ifndef HARL_HPP
+# define HARL_HPP 
 
-class   HumanB {
-private:
-    std::string _name;
-    Weapon* _weapon;
+#include <iostream>
+
+class   Harl {
 
 public:
-    HumanB( std::string name );
-    ~HumanB();
-    HumanB( const HumanB& other ); 
-    HumanB& operator=( const HumanB& other );
-
-    void    attack();
-    void    setWeapon( Weapon& weapon );
-
+    Harl();
+    ~Harl();
+    Harl( const Harl& src );
+    Harl& operator=( const Harl& other );
+    void    complain( std::string level );
+    
+private:
+    int     getLevel( std::string level );
+    void    debug( void );
+    void    info( void );
+    void    warning( void );
+    void    error( void );
 };
+
+
 
 #endif

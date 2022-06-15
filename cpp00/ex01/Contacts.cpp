@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 23:12:33 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/13 09:57:18 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:11:08 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void Contacts::GetContacts()
     std::cin >> this->darkest_secret;
 }
 
-void    Contacts::printContacts()
+void Contacts::printContacts()
 {
     std::cout << "First name: " << this->first_name << std::endl;
     std::cout << "Last name: " << this->last_name << std::endl;
@@ -35,21 +35,21 @@ void    Contacts::printContacts()
     std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
 }
 
-bool    Contacts::isEmptyContact()
+bool Contacts::isEmptyContact()
 {
     if (this->first_name == "")
         return true;
     return false;
 }
 
-void    Contacts::printMenu(int index)
+void Contacts::printMenu(int index)
 {
-        LOG_TRUNC(std::to_string(index + 1));
-        std::cout << " | ";
-        LOG_TRUNC(this->first_name);
-        std::cout << " | ";
-        LOG_TRUNC(this->last_name);
-        std::cout << " | ";
-        LOG_TRUNC(this->nickname);
-        std::cout << std::endl;
+    LOG_TRUNC(std::to_string(index + 1));
+    std::cout << " | ";
+    LOG_TRUNC(this->first_name);
+    std::cout << " | ";
+    LOG_TRUNC(this->last_name);
+    std::cout << " | ";
+    LOG_TRUNC(this->nickname);
+    std::cout << std::endl;
 }

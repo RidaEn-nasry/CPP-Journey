@@ -6,10 +6,9 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:08:41 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/12 11:01:51 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/13 11:11:12 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <PhoneBook.hpp>
 
@@ -28,7 +27,7 @@ int main(void)
             pb.SearchContact();
         else if (std::string(command) == "EXIT")
             exit(0);
-        else 
+        else
             std::cout << "Unknown command" << std::endl;
     }
     return (0);

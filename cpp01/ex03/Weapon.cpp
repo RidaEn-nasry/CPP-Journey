@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:09:59 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/14 19:51:32 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:10:45 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,7 @@ Weapon& Weapon::operator=( const Weapon& other ) {
     _type = other._type;
     return *this;
 }
+
+Weapon::Weapon( std::string type ) : _type( type ) {};
+
+Weapon::~Weapon() {};

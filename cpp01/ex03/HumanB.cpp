@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 07:33:24 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/14 19:51:18 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 13:05:54 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,9 @@ void    HumanB::attack( void )
 void    HumanB::setWeapon( Weapon& weapon ) {
     _weapon = &weapon;
 }
+
+HumanB::HumanB( const HumanB& src ) : _name( src._name ), _weapon( src._weapon ) {};
+
+HumanB::HumanB( std::string name ) : _name( name ) {};
+
+HumanB::~HumanB() {};

@@ -6,20 +6,20 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/12 15:54:11 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/13 10:13:46 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/06/14 08:08:42 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = globalbanksters
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-CC = c++
+CC = clang++
 
-INCS = -I./includes
+INCS = -I./interface
 SRCS = ./Account.cpp \
 		./tests.cpp
 
-INCLUDES = ./includes/Account.hpp
+INCLUDES = ./interface/Account.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -37,4 +37,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: clean fclean re

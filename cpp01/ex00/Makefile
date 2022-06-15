@@ -6,20 +6,20 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/13 13:51:48 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/13 15:42:19 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/06/14 08:09:02 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
-CC = c++
+CC = clang++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 SRCS = ./main.cpp\
 		./Zombie.cpp
 
-INCS = -I./includes
+INCS = -I./interface
 
-INCLUDES = ./includes/Zombie.hpp
+INCLUDES = ./interface/Zombie.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -37,4 +37,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: clean fclean re

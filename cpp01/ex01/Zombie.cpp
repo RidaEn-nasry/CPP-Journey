@@ -6,11 +6,11 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:49:21 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/13 17:42:20 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:06:54 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/Zombie.hpp"
+#include <Zombie.hpp>
 
 Zombie::~Zombie()
 {
@@ -38,3 +38,15 @@ Zombie* Zombie::ZombieHorde( int N, std::string name )
         horde[i].name = name;
     return (horde);
 }
+
+Zombie::Zombie( std::string name ) : name( name ) {};
+
+Zombie::Zombie( const Zombie& other ) : name( other.name ) {};
+
+Zombie& Zombie::operator=( const Zombie& other )
+{
+    this->name = other.name;
+    return *this;
+}
+
+Zombie::Zombie() {};
