@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 15:49:21 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 17:06:54 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:04:48 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,5 @@ Zombie* Zombie::ZombieHorde( int N, std::string name )
 }
 
 Zombie::Zombie( std::string name ) : name( name ) {};
-
-Zombie::Zombie( const Zombie& other ) : name( other.name ) {};
-
-Zombie& Zombie::operator=( const Zombie& other )
-{
-    this->name = other.name;
-    return *this;
-}
 
 Zombie::Zombie() {};

@@ -6,18 +6,12 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:17:52 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 17:48:50 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:59:46 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <Harl.hpp>
-
-
-Harl::Harl( void ) {}
-
-Harl::~Harl( void ) {};
-
 
 
 void    Harl::debug( void )
@@ -76,14 +70,6 @@ void    Harl::complain( std::string level )
     }
 }
 
-Harl& Harl::operator=( const Harl& other )
-{
-    if (this != &other)
-    {
-        *this = other;
-    }
-    return *this;
-}
 
 int Harl::getLevel( std::string level )
 {

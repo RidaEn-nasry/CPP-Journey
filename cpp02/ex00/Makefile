@@ -5,25 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/15 07:00:57 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/18 00:26:26 by ren-nasr         ###   ########.fr        #
+#    Created: 2022/06/15 18:29:15 by ren-nasr          #+#    #+#              #
+#    Updated: 2022/06/16 22:15:40 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed
-SRCS = ./main.cpp ./sed.cpp
-OBJS = $(SRCS:.cpp=.o)
-INCLUDES = ./interface/sed.hpp
+NAME = a.out 
 CC = clang++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-RM = rm -rf 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+RM = rm -rf
+SRCS = ./main.cpp\
+		./Fixed.cpp
+
+INCS = -I./interface
+
+INCLUDES = ./interface/Fixed.hpp
+
+OBJS = $(SRCS:.cpp=.o)
+
 %.o: %.cpp
-	$(CC) $(CXXFLAGS) -I./interface/ -c $< -o $@
+	$(CC) $(CXXFLAGS) $(INCS) -c $< -o $@ 
 
 $(NAME): $(OBJS) $(INCLUDES)
 	$(CC) $(OBJS) -o $@
 
-clean: 
+clean:
 	$(RM) $(OBJS)
 
 fclean: clean

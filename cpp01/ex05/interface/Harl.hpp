@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 11:22:22 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 16:52:04 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:01:50 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ class   Harl {
 
 public:
     Harl();
-    ~Harl();
-    Harl( const Harl& src );
-    Harl& operator=( const Harl& other );
     void    complain( std::string level );
 
 private:

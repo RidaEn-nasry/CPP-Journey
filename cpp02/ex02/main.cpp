@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   godheader.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 08:15:54 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 10:27:33 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/17 20:42:09 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/18 00:24:19 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <Fixed.hpp>
 
-#ifndef GODHEADER_HPP
-# define GODHEADER_HPP
-#include <catch.hh>
-#include <iostream>
-#include <fstream>
-#include <istream>
-#include <fcntl.h>
-#include <unistd.h>
-#include <sys/stat.h>
-
-#endif
+int main( void ) {
+    Fixed a;
+    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    return 0;
+}

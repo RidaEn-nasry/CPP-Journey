@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:00:14 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 17:02:10 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:05:26 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,5 @@ void Zombie::randomChump( std::string name )
 }
 
 Zombie::Zombie( std::string name ) : name( name ) {};
-
-Zombie::Zombie( const Zombie& other ) : name( other.name) {};
-
-Zombie& Zombie::operator=( const Zombie& other ) {
-    this->name = other.name;
-    return *this;
-}
 
 Zombie::Zombie() {};

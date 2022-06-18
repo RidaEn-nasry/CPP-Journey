@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   tests.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 21:09:59 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 18:04:04 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/17 23:02:17 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/18 15:00:52 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Weapon.hpp>
+#include "../cpp02/ex02/interface/Fixed.hpp"
+#include <Point.hpp>
+#include <sed.hpp>
+#include <catch.hh>
+#include <iostream>
+#include <fstream>
+#include <istream>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/stat.h>
 
-void    Weapon::setType( std::string type ) { _type = type; };
 
-const std::string& Weapon::getType( void ) const { return _type; };
-
-
-Weapon::Weapon( std::string type ) : _type( type ) {};

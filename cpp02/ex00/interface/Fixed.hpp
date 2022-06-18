@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/13 21:09:59 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 18:04:04 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/15 18:29:21 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/18 12:52:46 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Weapon.hpp>
-
-void    Weapon::setType( std::string type ) { _type = type; };
-
-const std::string& Weapon::getType( void ) const { return _type; };
+#include <iostream>
 
 
-Weapon::Weapon( std::string type ) : _type( type ) {};
+class Fixed {
+public:
+    Fixed();
+    ~Fixed();
+    Fixed( const Fixed& other );
+    Fixed& operator=( const Fixed& other );
+    int getRawBits( void ) const;
+    void    setRawBits( int const raw );
+
+private:
+    int _fixedPointValue;
+    static int  _fractionalBits;
+};

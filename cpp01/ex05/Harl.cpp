@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 12:17:21 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 17:05:10 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:01:18 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ Harl::Harl( void ) {
     _harl[3].name = "error";
     _harl[3].f = &Harl::error;
 }
-
-Harl::~Harl( void ) {};
 
 void    Harl::debug( void )
 {
@@ -58,11 +56,4 @@ void    Harl::complain( std::string level )
     }
 }
 
-Harl& Harl::operator=(const Harl& other) 
-{
-    if (this != &other)
-    {
-        *this = other;
-    }
-    return *this;
-}
+

@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:23:06 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 13:10:25 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/15 18:03:05 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ private:
 
 public:
     Weapon( std::string type );
-    ~Weapon();
-    Weapon( const Weapon& other );
-    Weapon& operator=( const Weapon& other );
     const std::string& getType() const;
     void    setType( std::string type );
 };
