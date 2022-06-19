@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 22:37:10 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/18 23:04:40 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/19 12:21:07 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int main( void )
 {
-    ClapTrap clap( "Joe" );
-    ClapTrap clap2( "Fred" );
 
     std::cout << "**************************************************************************" << std::endl;
     std::cout << "*                    ClapTrape's values                               *" << std::endl;
     std::cout << "**************************************************************************" << std::endl;
+    ClapTrap clap( "Joe" );
+    ClapTrap clap2( "Fred" );
     clap.attack( clap2.getName() );
     clap2.attack( clap.getName() );
     clap.takeDamage( 2 );

@@ -6,12 +6,14 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 18:29:21 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/18 12:52:46 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/18 18:21:02 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
+#include <iostream>
 
 class Fixed {
 public:
@@ -26,3 +28,5 @@ private:
     int _fixedPointValue;
     static int  _fractionalBits;
 };
+
+#endif

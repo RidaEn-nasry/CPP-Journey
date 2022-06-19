@@ -6,11 +6,14 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 12:40:31 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/18 18:11:30 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/18 18:20:03 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Fixed.hpp>
+
+#ifndef POINT_HPP
+# define POINT_HPP
+# include <Fixed.hpp>
 
 class   Point {
 
@@ -31,3 +34,4 @@ private:
 };
 
 bool    bsp( Point const a, Point const b, Point const c, Point const point );
+#endif

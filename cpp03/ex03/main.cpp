@@ -5,13 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 19:06:20 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/19 12:21:21 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/18 22:37:10 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/19 20:46:42 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <ScavTrap.hpp>
+#include <FragTrap.hpp>
+#include <DiamondTrap.hpp>
 
 int main( void )
 {
@@ -46,5 +48,45 @@ int main( void )
     scav2.displayStats();
     scav.guardGate();
     scav2.guardGate();
+
+    std::cout << "**************************************************************************" << std::endl;
+    std::cout << "*                   FragTrap's Value                               *" << std::endl;
+    std::cout << "**************************************************************************" << std::endl;
+    FragTrap frag( "Ricky" );
+    FragTrap frag2( "Bobby" );
+    frag.displayStats();
+    frag2.displayStats();
+    frag.attack( frag2.getName() );
+    frag2.attack( frag.getName() );
+    frag.takeDamage( 11 );
+    frag2.takeDamage( 12 );
+    frag.beRepaired( 9 );
+    frag.displayStats();
+    frag2.displayStats();
+    frag.highFivesGuys();
+    frag2.highFivesGuys();
+
+    std::cout << "**************************************************************************" << std::endl;
+    std::cout << "*                   DiamondTrap's Value                               *" << std::endl;
+    std::cout << "**************************************************************************" << std::endl;
+
+    DiamondTrap diamond( "David" );
+    DiamondTrap diamond2( "John" );
+    diamond.displayStats();
+    diamond2.displayStats();
+    diamond.attack( diamond2.getName() );
+    diamond2.attack( diamond.getName() );
+    diamond.takeDamage( 14 );
+    diamond2.takeDamage( 15 );
+    diamond.beRepaired( 10 );
+    diamond.displayStats();
+    diamond2.displayStats();
+    diamond.guardGate();
+    diamond2.guardGate();
+    diamond.highFivesGuys();
+    diamond2.highFivesGuys();
+    diamond.whoAmI();
+    diamond2.whoAmI();
+
     return (0);
 }

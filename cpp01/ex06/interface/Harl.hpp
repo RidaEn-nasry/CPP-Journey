@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 17:18:07 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/15 18:00:06 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/18 18:21:31 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ private:
     void    warning( void );
     void    error( void );
 };
-
-
 
 #endif

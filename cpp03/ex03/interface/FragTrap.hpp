@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/15 11:22:22 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/18 18:21:26 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/18 22:38:33 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/19 20:35:48 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
+# include <ClapTrap.hpp>
 
-#ifndef HARL_HPP
-# define HARL_HPP 
-
-#include <iostream>
-
-class   Harl {
-
+class   FragTrap : virtual public ClapTrap {
 public:
-    Harl();
-    void    complain( std::string level );
-
-private:
-    typedef struct s_harl {
-        std::string name;
-        void (Harl::* f)();
-    } t_harl;
-    t_harl _harl[4];
-    void    debug( void );
-    void    info( void );
-    void    warning( void );
-    void    error( void );
+    FragTrap( void );
+    FragTrap( std::string name );
+    FragTrap( int dummy );
+    ~FragTrap();
+    FragTrap( const FragTrap& other );
+    FragTrap& operator=( const FragTrap& rhs );
+    void    highFivesGuys( void );
+    std::string    getName( void ) const;
 };
 
 #endif

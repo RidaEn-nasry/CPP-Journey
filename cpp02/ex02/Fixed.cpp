@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 20:42:01 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/18 12:52:33 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/18 18:15:55 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ Fixed::Fixed( const float n ) {
     // std::cout << "Float constructor called" << std::endl;
 }
 
-// Fixed::~Fixed() {
-//     // std::cout << "Destructor called" << std::endl;
-// };
+Fixed::~Fixed() {
+    // std::cout << "Destructor called" << std::endl;
+};
 
 Fixed::Fixed( const Fixed& rhs ) {
     // std::cout << "Copy constructor called" << std::endl;

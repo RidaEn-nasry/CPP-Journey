@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/18 19:06:28 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/19 11:56:58 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/18 22:36:52 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/19 15:22:28 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     void    attack( const std::string& target );
     void    takeDamage( unsigned int amount );
     void    beRepaired( unsigned int amount );
-    std::string getName( void ) const;
+    virtual std::string getName( void ) const;
 protected:
     std::string     _name;
     std::string     _type;

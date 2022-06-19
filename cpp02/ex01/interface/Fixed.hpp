@@ -6,12 +6,15 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:25:35 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/18 08:41:23 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/18 18:20:43 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cmath>
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
+# include <iostream>
+# include <cmath>
 
 class Fixed {
 public:
@@ -33,3 +36,5 @@ private:
 };
 
 std::ostream& operator<<( std::ostream& os, const Fixed& self );
+
+#endif

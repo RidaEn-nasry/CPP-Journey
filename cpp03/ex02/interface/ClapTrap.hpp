@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 22:36:52 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/18 22:36:55 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/19 12:01:43 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
     std::string getName( void ) const;
 protected:
     std::string     _name;
+    std::string     _type;
     unsigned int    _hitPoints;
     unsigned int    _energyPoints;
     unsigned int    _attackDamage;

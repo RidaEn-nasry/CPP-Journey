@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 22:37:15 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/19 12:07:48 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/19 20:46:48 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 ScavTrap::ScavTrap( void ) : ClapTrap() {
     std::cout << "ScavTrap constructor called" << std::endl;
-    _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
-    _type = "ScavTrap";
+    this->_hitPoints = 100;
+    this->_energyPoints = 50;
+    this->_attackDamage = 20;
+    this->_type = "ScavTrap";
 }
 
 ScavTrap::ScavTrap( std::string name ) : ClapTrap( name ) {
     std::cout << "ScavTrap constructor called" << std::endl;
-    _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
-    _type = "ScavTrap";
+    this->_hitPoints = 100;
+    this->_energyPoints = 50;
+    this->_attackDamage = 20;
+    this->_type = "ScavTrap";
+}
+
+ScavTrap::ScavTrap( int dummy ) : ClapTrap() {
+    (void)dummy;
+    std::cout << "ScavTrap constructor called" << std::endl;
+    this->_energyPoints = 50;
 }
 
 ScavTrap::~ScavTrap( void ) {
@@ -49,5 +55,10 @@ ScavTrap& ScavTrap::operator=( const ScavTrap& rhs ) {
 }
 
 void    ScavTrap::guardGate( void ) {
-    std::cout << _type <<  " : " << _name << " is guarding the gate" << std::endl;
+    std::cout << _type << " : " << getName() << " is guarding the gate" << std::endl;
 }
+
+std::string ScavTrap::getName( void ) const {
+    return _name;
+}
+
