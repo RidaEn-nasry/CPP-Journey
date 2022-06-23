@@ -1,0 +1,9 @@
+make -f /Users/wa5ina/42/cpp/cpp01/ex03/Makefile --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/wa5ina/42/realCPP/cpp04/ex02'
+make: Leaving directory `/Users/wa5ina/42/realCPP/cpp04/ex02'
+ 
+make: /Users/wa5ina/42/cpp/cpp01/ex03/Makefile: No such file or directory
+make: *** No rule to make target `/Users/wa5ina/42/cpp/cpp01/ex03/Makefile'.
+make: Failed to remake makefile `/Users/wa5ina/42/cpp/cpp01/ex03/Makefile'.
+make: *** No targets specified and no makefile found.  Stop.
+
