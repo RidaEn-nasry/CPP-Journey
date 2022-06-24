@@ -3,40 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-<<<<<<< HEAD
-#    Created: 2022/06/20 08:15:33 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/20 08:16:53 by ren-nasr         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-NAME = animal 
-CC = clang++
-CXXFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -g 
-RM = rm -rf
-SRCS = ./main.cpp\
-		./Animal.cpp\
-		./Dog.cpp\
-		./Cat.cpp
-
-INCS = -I./includes
-
-INCLUDES = ./includes/Animal.hpp ./includes/Dog.hpp ./includes/Cat.hpp
-OBJS = $(SRCS:.cpp=.o)
-
-%.o: %.cpp
-	$(CC) $(CXXFLAGS) $(INCS) -c $< -o $@ 
-
-$(NAME): $(OBJS) $(INCLUDES)
-	$(CC) $(OBJS) -o $@
-
-clean:
-	$(RM) $(OBJS)
-
-=======
 #    Created: 2022/06/23 10:30:33 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/23 10:50:55 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/06/24 07:16:49 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,15 +28,10 @@ $(NAME): $(OBJS) $(INCLUDES)
 	
 clean:
 	$(RM) $(OBJS)
->>>>>>> f5882e6 (cpp04 ex00 ex01 ex02 finished)
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
 
-<<<<<<< HEAD
-.PHONY: clean fclean re
-=======
 .PHONY: clean fclean re 
 
->>>>>>> f5882e6 (cpp04 ex00 ex01 ex02 finished)

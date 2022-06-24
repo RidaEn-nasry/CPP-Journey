@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WronAnimal.hpp                                     :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 05:42:11 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/23 10:44:57 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/24 07:34:57 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class   Animal {
 public:
     Animal();
-    ~Animal();
+    virtual ~Animal();
     Animal(const Animal& other);
     Animal& operator=(const Animal& other);
     void    makeSound() const;
