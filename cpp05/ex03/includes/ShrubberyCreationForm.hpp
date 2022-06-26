@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:37:45 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/26 17:00:42 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/26 19:50:52 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ public:
     ~ShrubberyCreationForm ();
     const   std::string& getTarget ( void ) const;
     void    execute ( Bureaucrat const& executor ) const;
-    virtual Form*   newForm(std::string target);
 };
 
 

@@ -14,6 +14,7 @@ class   ParentType {
         this->_parent = rhs._parent;
         return *this;
     };
+    virtual ParentType* newType (std::string name) = 0;
     int getParent() const {
         return this->_parent;
     };
@@ -23,9 +24,11 @@ class Type1 : public ParentType {
     private:    
         std::string typeName;
     public:
-        Type1(std::string typeName) : typeName(typeName) {};
+        Type1(std::string typeName): ParentType(1) {
+            this->typeName = typeName;
+        };
         const std::string & getTypeName() { return typeName; };    
-        Type1* newType1 ( std::string typeName ) {
+        ParentType* newType ( std::string typeName ) {
             return new Type1 ( typeName );
         }
 };
@@ -35,10 +38,13 @@ class   Type2 : public ParentType {
     private:
         std::string typeName;
     public:
-        Type2(std::string typeName) : typeName(typeName) {};
+        Type2(std::string typeName) : ParentType(1) {
+           this->typeName = typeName;
+        };
+
         const std::string & getTypeName() { return typeName; };
-        Type2* newType2( std::string typeName ) {
-            return new Type2(typeName);
+        ParentType* newType( std::string typeName ) {
+            return new Type2( typeName );
         }
 };
 
@@ -46,25 +52,21 @@ class   TypeMaker {
     private:
         typedef struct {
             std::string typeName;
-            ParentType* (ParentType::* f)(std::string);
+            
         } t_typeMaker;
-        t_typeMaker _typeMaker[2];
+        Form arr[3];
     public:
         TypeMaker() {
             _typeMaker[0].typeName = "Type1";
-            _typeMaker[0].f = &Type1::newType1;
+            _typeMaker[0].f = &ParentType::newType;
             _typeMaker[1].typeName = "Type2";
-            _typeMaker[1].f = &Type2::newType2;
+            _typeMaker[1].f = &ParentType::newType;
         };
         ParentType* makeType(std::string typeName) {
-            for (int i = 0; i < 2; i++) {
-                if (typeName == _typeMaker[i].typeName) {
-                    return (this->_typeMaker[i].f)(typeName);
-                }
-            }
-            return NULL;
+            for (int i = 0; i < 3; i++) {
+                if (t)
+            }    
         };
-        }
 };
 
 

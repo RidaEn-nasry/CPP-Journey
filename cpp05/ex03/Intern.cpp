@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 15:02:07 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/26 17:47:53 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/26 20:02:35 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,18 @@
 #include <PresidentialPardonForm.hpp>
 #include <ShrubberyCreationForm.hpp>
 
-t_forms forms[3];
+// i will try to use an array store in it the pointers for virtual functiion makeForm();
+//however there seems to be a problem which  
 
-Intern::Intern() {};
-
-Intern::Intern(std::string name, std::string target){
-
-    // this->_forms[0].name = "robotomy request";
-    // this->_forms[0].f = &Form::newForm;
-    // this->_forms[1].name = "presidential pardon";
-    // this->_forms[1].f = &Form::newForm;
-    forms[0].name = "shrubbery creation";
-    forms[0].f = &Form::newForm;
-    forms[1].name = "robotomy request";
-    forms[1].f = &Form::newForm;
-    forms[2].name = "presidential pardon";
-    forms[2].f = &Form::newForm;
+Intern::Intern(){
+    this->forms[0].name = "robotomy request";
+    this->forms[0].f = &Intern::createRobotomyRequestForm;
+    this->forms[1].name = "presidential pardon";
+    this->forms[1].f = &Intern::createPresidentialPardonForm;
+    this->forms[2].name = "shrubbery creation";
+    this->forms[2].f = &Intern::createShrubberyCreationForm;
 };
+
 
 Intern::~Intern() {};
 
@@ -47,9 +42,26 @@ Intern& Intern::operator=(const Intern& rhs) {
 }
 
 Form*   Intern::makeForm( std::string name, std::string target ) {
-   for (int i = 0; i < 3; i++) {
-    if (forms[i].name == name) {
-        return new (forms[i].f)(target);
+    for (int i = 0; i < 3; i++) {
+        if (this->forms[i].name == name)
+        {
+            std::cout << "Intern creates " << this->forms[i].name << " form for " << target << std::endl;
+            return (this->*forms[i].f)(target);
+        }
     }
-   }
+    std::cout << "Intern: Form not found" << std::endl;
+    return NULL;
 }
+
+Form* Intern::createPresidentialPardonForm(std::string target) {
+    return new PresidentialPardonForm(target);
+}
+
+Form* Intern::createRobotomyRequestForm(std::string target) {
+    return new RobotomyRequestForm(target);
+}
+
+Form*  Intern::createShrubberyCreationForm(std::string target) {
+    return new ShrubberyCreationForm(target);
+}
+

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 10:40:52 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/26 16:43:56 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/26 19:48:50 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,3 @@ void    ShrubberyCreationForm::execute ( const Bureaucrat& executor ) const {
     file << "   > ^ <" << std::endl;
     file.close ();
 };
-
-Form* ShrubberyCreationForm::newForm ( std::string target ) {
-    return new ShrubberyCreationForm ( target );
-}
