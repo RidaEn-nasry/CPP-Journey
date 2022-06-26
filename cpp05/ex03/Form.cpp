@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:35:08 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/26 13:26:46 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/26 16:29:02 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,3 @@ void    Form::beSigned ( Bureaucrat& b ) {
     else
         this->_signed = true;
 }
-

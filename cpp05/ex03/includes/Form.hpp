@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:29:38 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/26 14:51:06 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/26 17:33:43 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ public:
 
     virtual void    beSigned ( Bureaucrat& b );
     virtual void    execute ( const Bureaucrat& executor ) const = 0;
-
+    
+    virtual Form* newForm(std::string target) = 0;
+ 
     class   GradeTooHighException : public std::exception {
     public:
         virtual const char* what () const throw();

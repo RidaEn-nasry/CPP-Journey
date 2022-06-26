@@ -6,7 +6,7 @@
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 08:58:17 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/26 14:51:29 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/06/26 16:02:49 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,12 @@ SRCS = main.cpp\
 		 ShrubberyCreationForm.cpp\
 		 PresidentialPardonForm.cpp\
 		 RobotomyRequestForm.cpp\
+		 Intern.cpp
 		 
 INCS = -I./includes/
 INCLUDES = ./includes/Bureaucrat.hpp ./includes/Form.hpp\
 			./includes/ShrubberyCreationForm.hpp ./includes/RobotomyRequestForm.hpp\
-			./includes/PresidentialPardonForm.hpp
+			./includes/PresidentialPardonForm.hpp ./includes/Intern.hpp
 	
 RM = rm -rf
 
