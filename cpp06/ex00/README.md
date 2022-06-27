@@ -1,6 +1,4 @@
-To understand this module fully we better off answering 2 ultra important questions first : 
- - ## How are data types represented and computed internally ? 
- - ## How type conversion or type casting happens at the bit level ? 
+
 
 #  Stone 1.0 🗿
  
@@ -16,7 +14,9 @@ In layman language it's something that can represent scale or volume. However th
 Again in layman language it means a scalar type is a type which exist natively in the language (int, char, double) , and it only contains one single and sole value , not two not three, for example **int** is a scalar type , it's built-in in c++ and cannot be decomposed into further data types it's like an atom, thus scalar types are also called **atomic types** , an example of non-scalar types is arrays, arrays are native c++ data types however they're composite, they contains many values of something, (array of ints, chars...), thus they're not scalar types. because they go against rule 2.0 of scalar types, the one that says no fucking decomposability. another example is **boolean** **is it native ?** good, rule 1.0 checked, **is it composite ?** i don't think so, thus boolean is a scalar type. <br>
 Now in you case you not confused yet, let me confuse you, What in the fuck does a boolean has to do with a quantity or a scale, the answer is nothing, and whoever wrote this specification should buy a fucking dictionary. 
 
-### How exactly is type conversion happends  
+
+# Stone 1.1 🗿
+
 
 
 
