@@ -84,7 +84,7 @@ int x = 8.0 / 4;
 ```
 
 ### Shit you think you don't know but you actually already know ?
-When you the brogrammer invoke a type conversion either implicitly or explicitly (we'll talk about it soon), the compiler will decide if it can convert between your types and if it can how the fuck can it (the compiler) do so ?  <br>
+When you the brogrammer invoke a type conversion either implicitly or explicitly (we'll talk about it soon), the compiler will decide if it can convert between your types and if it can how the fuck can it (the compiler) do so ? <br>
 **NOTE:** : when a type conversion takes place a new value is created of your (converted to) type from your (converted from) type, hence your old type and it's value remains unchanged.<br> 
 "But hey how does the compiler know how to convert between different data types" you asking ? well there's a thing called the **standard conversion** , it's a set of specifications that decides what the fuck will happen when 2 specific types is being converted, this standard can be divided into 4 categories : <br> <br>
 🖕 **Numeric promotions.** <br>
@@ -95,5 +95,27 @@ When you the brogrammer invoke a type conversion either implicitly or explicitly
 So the compiler decides if a conversion is valid or not by looking (roughly speaking ) into these standards and if your conversion doesn't match none of these standards he'll scream at you, We'll get into each of these guys and try destructor them next. <br>
 
 🖕 **Numeric promotions:**<br>
-As the title read (if you can read), you most likely already know what this 
- 
+As it read, it's a promotion from lesser to a bigger type, in more technical terms a wider type (more bits) to a narrower type (less bits), this type of conversion happens when you the brogrammer try to assign narrower numeric data type to a wider numeric data type (i.e `char` to `int` or `bool` to `int`) this kind of conversion have the characteristics of value-preserving, i mean it's obvious isn't it ?? doesn't click yet ?? fuck!!!! here's an example converting a `char` to an `int` <br>
+```
+char character = 'a';
+int integer = character;
+```
+`character` binary representation is `01100001` so the compiler will create a new value of type `int` with your `character` binary pattern and then add 24 zeros towards the most significant bit something like `00000000000000000000000001100001` and then assign it to `integer` varibale and remember your `character` variable remains unchanged. <br>
+
+Still **Numeric promotions** is too divided into 2 categories: <br>
+🦶 Floating point promotions <br> 
+🦶 Integral promotions <br>
+You might be asking what's going on with this category thing, a lot of categories right?? fuck!! me too it's too much for something too simple, but still i think the reason they've tried to split floating point promotions from integral promotions is the very difference in the internal binary representation `float` and `double` use the IEE754 representation which is way different from raw binary that the rest of integrals uses. <br>
+As you might guessed floating point promotions is used to convert 32bit single precision `float` to 64bits double precision `double` .<br>
+While integral promotion is used to convert the rest of the horde: <br>
+* `signed char` or `signed short` can be converted to `int`. <br>
+* `unsigned char` , `char8_t` and `unsigned short` can be converted to `int` if can hold the range of the type or `unsigned int` otherwise. <br>
+
+* `bool` can be converted to `int`, false becoming 0 and true becoming 1.<br>
+
+🖕 **Numeric conversions.** <br>
+Numeric conversions 
+
+
+
+
