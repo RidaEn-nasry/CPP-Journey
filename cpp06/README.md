@@ -1,3 +1,6 @@
+# ⚠️ IMPORTANT
+I bet my left testical you won't complete this reading, actually i bet my left testical + right liver you won't complete this reading, why i'm so sure ?? i'm supported by statistics which says 92% of the population never complete shit that they started. which means i have 92% chance of being right!. but if you're of that tiny 8% you will be prized with massive knowledge and clarity especially if you go through the quizzes too , but i fucking know you won't complete it. 
+
 #  Stone 0.0 🗿
  
 ## Scalar types   
@@ -114,8 +117,100 @@ While integral promotion is used to convert the rest of the horde: <br>
 * `bool` can be converted to `int`, false becoming 0 and true becoming 1.<br>
 
 🖕 **Numeric conversions.** <br>
-Numeric conversions 
+**Numeric conversions** takes care of what numeric promotions did not these including the following conversions:
+
+🦶 **Wider integral types to narrower integral types** <br>
+```
+int integer = 4565;
+short shorVar = integer; // int (4bytes) to short (2bytes)
+char character = shortVar; // short (2bytes) to char (1byte)
+long int looong = 8888888;
+integer = looong; // long int (8bytes) to int (4bytes)
+long long int loooooooong = 9999999;
+integer = loooooooong ; // long long int (8bytes) to int (4bytes) 
+```
+
+**NOTE:** `long` size in my Mac OS X M1 is 64bits however in some architectures it's 32bits still it's a considered a numeric conversion even though types are equal in size. <br>
+
+🦶 **Wider floating point type to narrower floating point type** <br>
+```
+double d = 4.5;
+float f = d; // double(8bytes) to float(4bytes) 
+long double ld = 55667.2334;
+d = ld; // long double (12bytes) to double(8bytes)
+```
+
+🦶 **converting integral type to floating point type or vice versa.** <br>
+```
+int i = 6.3; // double (8bytes) to int (bytes) (note: 6.3 is considered double cause any numeric literal with decimal point '.' is considered a double literal )
+
+double d = 8; // int (4bytes) to double (8bytes) (8 is an integer literal)
+```
+🦶 **converting floating point or integral type to a bool or vice versa.** <br>
+```
+int x = true; // bool (1byte) to int (4bytes)
+bool boolean = 1; // int (4bytes) to bool (1byte)
+bool boolean2 = 5.8; // double (8bytes) to bool (1byte)
+```
+fuck!!!! that was a long road, i mean fuck!!!, you better bookmark this page as reference for future use because sure as hell you won't remember all that, unless you get a pre-release chip from Neuralink or something, any way we said that **numeric promotions** are value-preserving you might have guessed by now that **numeric conversion** may or may not preserve your value, the second example we presented when we assigned `double` to `int` the fractional part got dropped and we ended up with a half-ass data,still your compiler will scream at you any time you about to implicitly convert some types which potentially lead to a loss of data. like (`double` or `float` to `int`)..... <br>
 
 
+**TIP:** Don't use a narrowing implicit conversion (if necessary use an explicit one instead) for the sake of your co-brogrammers and your future self and in case you don't read your code twice, fuck your co-brogrammers use whatever you want. <br>
+
+👙 **Data loss and Precision loss** <br>
+We've already mentioned and re-mentioned data loss but not precision loss, first when we talk about precision loss we mainly talk about fractional part in decimals (number.fraction) , so the name speaks for itself, we may or may not loss some digits from the fractional part of our result when doing a narrowing conversion of floating-point numbers , example:
+```
+float f = 0.12346789 // we're out range normally the float can represent up to 7 fractional digits
+std::cout << f << std::endl;
+```
+```
+ $ 0.1234567 // we lost last 2 digits
+```
+
+🖕 **Arithmetic conversion:** <br>
+To put you on context, consider the following
+```
+std::cout << 5 + 2.4 << std::endl;
+```
+An arithmetic operation needs to take place, however the 2 operands are dissimilar, so the compiler again needs to do a type conversion before calculating the result. so concluding an implicit (remember we still in implicit) arithmetic conversion takes place by the compiler automatically when a binary operator necessitate 2 operands of the same type.<br>
+Those are the operators that requires 2 similar types: <br>
+> `+, -, * , /, %,<, >, <=, >=, ==, !=, &, ^, |, ?:` <br>
+
+**The rules of the arithmetic conversion are simple:** <br>
+First here's one more list to add to your collection <br>
+```
+long double (highest)
+double
+float 
+unsigned long long 
+long 
+unsigned int 
+int (lowest)
+
+```
+-> Listen compiler if one of the operands is in the priority list (above) convert the guy to the type of the highest prioritised <br>
+
+-> else if none of them are in the list, promote them both to `int` <br>
+some examples we get the drill <br>
+```
+std::cout << 1 + 5.6 << std::endl;
+```
+since both of operands exist in priority list (remember that at least one of them should exist) we convert the one with the lowest priority to the one with the highest priority. in this case what ???? `double` so our expression will first be changed to `1.0 + 5.6` then evaluate to `6.6`. <br>
+another example:
+```
+ char c = 'a'; // 97
+ short s = 1; // 1
+
+ std::cout << sizeof(c + s) << std::endl; 
+ std::cout << sizeof(c + s) << std::endl;
+```
+```
+ $ 4 
+ $ 98 
+```
+output 4 means that our result is a 4bytes `int` which conclude that the addition is done between `int`'s which again conclude our `short` and `char` have been converted to 2 `int`'s before calculation. <br>
 
 
+#  Stone 0.1 🗿
+
+## Explicite type conversion
