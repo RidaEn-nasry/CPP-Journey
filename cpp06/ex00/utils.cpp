@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   converters.hpp                                     :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 08:31:29 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/29 06:59:08 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/29 06:46:21 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/29 06:51:06 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include <converters.hpp>
 #include <iostream>
 
-// Detectors 
-bool    is_double(std::string str);
-bool    is_float(std::string str);
-bool    is_int(std::string str);
-bool    is_char(std::string str);
+int how_many_digits(char *str, int i) {
+    if (str[i] == '\0')
+        return 0;
+    if (str[i] >= '0' && str[i] <= '9')
+        return 1 + how_many_digits(str, i + 1);
+    return how_many_digits(str, i + 1); 
+}
 
-
-// Converters
-float   to_float(std::string str);
-int     to_int(char* str);
-
-// Utils
-int    how_many_digits(char *str, int i);

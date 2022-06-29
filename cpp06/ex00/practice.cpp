@@ -1,22 +1,48 @@
 
 
-#include <limits.h>
+
 #include <iostream>
 
-int main( void )
-{
-    // overflowing a float number
-        
-
-    // biggest number that can be represented by a 32-bit float is 3.40282347e+38f (FLT_MAX) 
-
-//    example of lose of precision when converting a float to a double:
-    double d = 3.14159265358979323846;
-   float f = 3.14159265358979323846f;
-//    double d = f;
-   std::cout << "f: " << f << std::endl;
-   std::cout << "d: " << d << std::endl;
-//    std::cout << "f - d: " << f - d << std::endl;
 
 
+
+// int count(char *str) {
+
+// }
+
+
+// char    getAsciiNum( char c ) {
+//     return (c - '0');
+// }
+
+int main( void ) {
+//    converting a string char* to int using static_cast 
+    std::string str = "123";
+    int arr[3];
+    for (int i =0; i < str.size(); i+++)
+        arr[i] = static_cast<int>(str[i]) - '0';
+    
+    int sum = 0;
+    for (int i =0; i < str.size(); i++)
+        sum += arr[i] * pow(10, str.size() - i - 1);
+    
+
+    // char *str = new char[6];
+    
+    // strcpy(str, "12345");
+
+    // int arr[5];
+    // for (size_t i = 0; str[i] != '\0'; i++)
+    // {
+    //     arr[i] = static_cast<int>(str[i]) - '0'; 
+    //     std::cout << arr[i] << std::endl;
+
+    // }
+
+    // // convert all digits in arr to one int
+    // int result = 0;
+    // for (size_t i = 0; i < 5 ; i++)
+    //     result += arr[i] * pow(10, 5 - i);
+    // std::cout << result << std::endl;
+    return 0;
 }

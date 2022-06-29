@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
+#    By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 08:36:35 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/27 08:39:20 by ren-nasr         ###   ########.fr        #
+#    Updated: 2022/06/29 07:23:03 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,9 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRCS = main.cpp\
 	 converters/to_char.cpp\
 	 converters/to_int.cpp\
-	 converters/to_float.cpp\
 	 converters/to_double.cpp\
+	converters/to_float.cpp\
+	utils.cpp
 
 INCS = -I./includes/
 INCLUDES = ./includes/converters.hpp
@@ -25,7 +26,7 @@ INCLUDES = ./includes/converters.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 %.o:%.cpp
-	$(CC) $(CXXFLAGS) $(INCS) -c $< -o $@
+	$(CC) $(CXXFLAGS) $(INCS) -g -c $< -o $@
 
 
 $(NAME): $(OBJS) $(INCLUDES)

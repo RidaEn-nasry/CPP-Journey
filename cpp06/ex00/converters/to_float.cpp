@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   to_float.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ren-nasr <ren-nasr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 08:30:54 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/27 09:46:50 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/29 07:05:07 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,36 @@
  */
 
 
-static bool overflow(std::string str, int bytes) {
-    // 
-}
+// static bool overflow(std::string str, int bytes) {
+//     // 
+// }
 
 bool    is_float(std::string str) {
     if ((str.find('.') != std::string::npos && str.back() == 'f') 
-    || str == iinf || str == -iinf || str == nanf)
+    || str == "iinf" || str == "-iinf" || str == "nanf")
     {
-        if (overflow(str))
+        // if (overflow(str))
         return true;
     }
     return false;
 }
-
 float   to_float(std::string str) {
-    float res;
-    res = std::stof(str);
-    return res;
+    
+    // if (str == "iinf")
+    //     return INFINITY;
+    // for (int i = 0; i < str.size(); i++)
+    // {
+        
+    // }
+    // for (int i = 0; i < str.size(); i++)
+    // {
+    //     if 
+    // }
+    (void)str;
+    return 0;
+    // else if (str == "-iinf")
+
+    
 }
+
 
