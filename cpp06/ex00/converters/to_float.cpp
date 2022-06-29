@@ -6,11 +6,12 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 08:30:54 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/28 20:48:38 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/29 18:19:11 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <converters.hpp>
+#include <conversion.hpp>
+
 
 /**
  * @funcion: is_float(std::string str)
@@ -21,26 +22,25 @@
  */
 
 
-static bool overflow(std::string str, int bytes) {
-    // 
-}
-
-bool    is_float(std::string str) {
-    if ((str.find('.') != std::string::npos && str.back() == 'f') 
-    || str == iinf || str == -iinf || str == nanf)
-    {
-        if (overflow(str))
+bool    is_float ( std::string str ) {
+    if ((str.find ( '.' ) != std::string::npos && str.back () == 'f')
+        || str == "iinf" || str == "-iinf" || str == "nanf")
         return true;
-    }
     return false;
 }
 
-float   to_float(std::string str) {
-    for (int i = 0; i < str.size(); i++)
-    {
-        // convert string to float using static_cast
-        
-        std::cout << static_cast<float>(str) <<
-    }
-}
+float   to_float ( std::string str ) {
 
+    double  result = 0;
+    if (str == "inff")
+        return INFINITY;
+    if (str == "-inff")
+        return -INFINITY;
+    if (str == "nanf")
+        return NAN;
+    result = std::stod ( str );
+    if (is_overflow ( result, "float" ))
+        throw OverFlowException ();
+    else
+        return static_cast<float>(result);
+}

@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 08:56:33 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/25 11:26:43 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/26 20:16:26 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,20 +70,20 @@ int main ( void ) {
     catch (Bureaucrat::GradeTooLowException& e) {
         std::cout << e.what () << std::endl;
     }
-    
+
     // exception is catchable by std::exception
     std::cout << std::endl;
     std::cout << "*************************************************************" << std::endl;
     std::cout << "                 Exception is catchable by std::exception" << std::endl;
     std::cout << "*************************************************************" << std::endl;
     try {
-        throw Bureaucrat::GradeTooHighException();
+        throw Bureaucrat::GradeTooHighException ();
     }
     catch (std::exception& e) {
         std::cout << e.what () << std::endl;
     }
     try {
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::GradeTooLowException ();
     }
     catch (std::exception& e) {
         std::cout << e.what () << std::endl;

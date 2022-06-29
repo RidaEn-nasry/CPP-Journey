@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   to_char.cpp                                        :+:      :+:    :+:   */
+/*   serialize.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 09:13:08 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/29 18:19:15 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/29 18:54:56 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/29 21:26:26 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <conversion.hpp>
-
+#include <header.hpp>
 
 /**
- * @function: to_char(std::string str)
- * @howto: if string size is 1, it's a char.
- * @brief : Detect if string is char.
- * @note
- * @param  scalar: string to detect.
-* @retval true
-*/
+ * @brief change the data to a raw pointer.
+ * @note   the function uses reinterpret_cast to do it's job
+ * @param  *data: type to serialize.
+ * @retval  uintptr_t: raw pointer.
+ */
 
-bool    is_char ( std::string scalar ) {
-
-    if (scalar.size () == 1 && scalar[0] >= 0 && scalar[0] <= 127)
-        return true;
-    return false;
+uintptr_t serialize(Data *data) {
+    return reinterpret_cast<uintptr_t>(data); 
 }

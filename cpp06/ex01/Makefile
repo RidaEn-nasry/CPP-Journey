@@ -5,23 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/27 08:36:35 by ren-nasr          #+#    #+#              #
-#    Updated: 2022/06/29 08:46:48 by ren-nasr         ###   ########.fr        #
+#    Created: 2022/06/29 21:01:53 by ren-nasr          #+#    #+#              #
+#    Updated: 2022/06/29 21:26:45 by ren-nasr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert 
+NAME = reinterpret_cast 
 CC = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRCS = main.cpp\
-	 converters/to_char.cpp\
-	 converters/to_int.cpp\
-	 converters/to_double.cpp\
-	converters/to_float.cpp\
-	utils.cpp
+		./serialize.cpp\
+		./deserialize.cpp
 
 INCS = -I./includes/
-INCLUDES = ./includes/conversion.hpp
+INCLUDES = ./includes/header.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

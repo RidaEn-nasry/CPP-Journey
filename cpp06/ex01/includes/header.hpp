@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   to_char.cpp                                        :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 09:13:08 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/29 18:19:15 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/29 20:50:50 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/29 21:28:49 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <conversion.hpp>
+
+#ifndef HEADER_HPP
+# define HEADER_HPP
 
 
-/**
- * @function: to_char(std::string str)
- * @howto: if string size is 1, it's a char.
- * @brief : Detect if string is char.
- * @note
- * @param  scalar: string to detect.
-* @retval true
-*/
+#include <iostream>
 
-bool    is_char ( std::string scalar ) {
+class   Data {
+public:
+    size_t size;
+    int  another_var;
+};
 
-    if (scalar.size () == 1 && scalar[0] >= 0 && scalar[0] <= 127)
-        return true;
-    return false;
-}
+uintptr_t   serialize(Data* data);
+Data* deserialize(uintptr_t raw);
+
+#endif 

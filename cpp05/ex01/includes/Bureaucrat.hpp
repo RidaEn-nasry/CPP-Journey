@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:33:57 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/25 18:35:35 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/26 20:16:37 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class   Bureaucrat {
 private:
     const std::string _name;
     int _grade;
-    
+
 public:
     Bureaucrat ();
     ~Bureaucrat ();
@@ -34,14 +34,14 @@ public:
     int getGrade ( void ) const;
     void incrementGrade ( void );
     void decrementGrade ( void );
-    void signForm( Form& f );
+    void signForm ( Form& f );
 
-    
+
     class GradeTooHighException : public std::exception {
     public:
         virtual const char* what () const throw();
     };
-    
+
     class GradeTooLowException : public std::exception {
     public:
         virtual const char* what () const throw();

@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   difference.cpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 19:18:06 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/28 19:21:41 by ren-nasr         ###   ########.fr       */
+/*   Created: 2022/06/29 21:28:28 by ren-nasr          #+#    #+#             */
+/*   Updated: 2022/06/29 21:37:51 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BASE_HPP
+# define BASE_HPP
 
+#include <iostream>
 
-/**
- * @brief  demonstration of difference between static_cast and C-style cast.
- * @note   
- * @retval None
- * @differences:
- * * * static_cast does perform a compile-time check to ensure that the cast is valid. 
- * * * cva
- * * * C-style cast does not perform a compile-time check.
- * * * static_cast are more readable than C-style cast and easily findable in the code.
- */
+class   Base {
+public:
+    virtual ~Base() {};
+};
 
-
-
-void    compile_check() {
-
-}
+#endif
