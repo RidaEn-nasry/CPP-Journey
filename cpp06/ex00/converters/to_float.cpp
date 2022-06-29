@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 08:30:54 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/06/27 09:46:50 by ren-nasr         ###   ########.fr       */
+/*   Updated: 2022/06/28 20:48:38 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,11 @@ bool    is_float(std::string str) {
 }
 
 float   to_float(std::string str) {
-    float res;
-    res = std::stof(str);
-    return res;
+    for (int i = 0; i < str.size(); i++)
+    {
+        // convert string to float using static_cast
+        
+        std::cout << static_cast<float>(str) <<
+    }
 }
 
