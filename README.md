@@ -34,3 +34,9 @@ namespace, stdio stream, class & instance, member attributes & functions, non-me
 > CPP Module06 <br>
 
 static_cast, dynamic_cast, reintepretate_cast, const_cast
+
+> CPP Module07 <br>
+
+templates (function & class)
+
+
