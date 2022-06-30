@@ -211,7 +211,3 @@ another example:
 output 4 means that our result is a 4bytes `int` which conclude that the addition is done between `int`'s which again conclude our `short` and `char` have been converted to 2 `int`'s before calculation. <br>
 
 
-#  Stone 0.1 🗿
-
-## Explicite type conversion
-
