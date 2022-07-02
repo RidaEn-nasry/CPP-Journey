@@ -6,7 +6,7 @@
 /*   By: ren-nasr <ren-nasr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 21:29:28 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/02 07:09:57 by wa5ina           ###   ########.fr       */
+/*   Updated: 2022/07/02 18:13:02 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	Awesome {
 	private:
 		int	_n;
 	public: 
-		Awesome( void ) : _n(0) { return;};
+			Awesome( void ) : _n(42) { return;};
 		int get( void ) const {return this->_n;};
 };
 
@@ -39,22 +39,16 @@ void	print(T const& x) {
 
 /* End of Mandatory tests */
 
-template <typename T, typename F>
-void iter(T *arr, size_t size, F f) {
+template <typename T>
+void iter(T *arr, size_t size, void (*f)(const T& t)) {
 	for (size_t i = 0; i < size; i++) f(arr[i]);
 }
 
 template <typename T>
-void increment(T &i) {
-	i += 1;
+void	devideRand(T& t) {
+	srand(time(NULL));
+	std::cout << t / (rand() % 10) << std::endl; 
 }
 
-template <typename T>
-void display(const T &t, size_t size) {
-	for (size_t i = 0; i < size; i++) {
-		std::cout << t[i] << " ";
-	}
-	std::cout << std::endl;
-}
 
 #endif

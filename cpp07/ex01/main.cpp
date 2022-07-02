@@ -6,43 +6,42 @@
 /*   By: ren-nasr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:15:02 by ren-nasr          #+#    #+#             */
-/*   Updated: 2022/07/02 07:09:56 by wa5ina           ###   ########.fr       */
+/*   Updated: 2022/07/02 18:11:15 by ren-nasr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iter.hpp>
 
-int main() {
 
+int main() {
+	std::cout << "**************************************************************************" << std::endl;
+	std::cout << "*                             Mandatory Tests                            *" << std::endl;
+	std::cout << "**************************************************************************" << std::endl;
 	int tab[]= {0,1,2,3,4};
         Awesome tab2[5];
 
 	iter(tab, 5, print);
 	iter(tab2, 5, print);
 
-	/* array of 5 integers with explicit instantiation */
-	int arr[] = {1, 2, 3, 4, 5};
-	iter<int[5], void (*)(int&)>(arr, 5, increment<int>);
-	display<int[5]>(arr, 5);
+	std::cout << "**************************************************************************" << std::endl;
+	std::cout << "*                             Optional Tests                            *" << std::endl;
+	std::cout << "**************************************************************************" << std::endl;
+	std::cout << "Integers: " << std::endl;
+	int arr[] = {145, 234, 233, 344, 2345};
+	iter(arr, 5, devideRand);
 
-	/* array of 7 floats with implicite instantiation */
-	float arr2[] = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f, 6.6, 7.7};
-	iter(arr2, 7, increment<float>);
-	display(arr2, 7);
+	std::cout << "Floats: " << std::endl;
+	float arr2[] = {145.41f, 342.244f, 3343.343f, 414.44f, 544.54f, 1456.634f, 7232.47f};
+	iter(arr2, 7, devideRand);
 
-	/* invalid instantiation */
-	 // iter(arr2, 7, increment); /* increment is a function template and
-	// should be instantiated before passed as argument */
 
-	/* array of 5 doubles with explicite instantiation */
-	double arr3[] = {4.3, 5.4, 6.5, 7.6, 8.7};
-	iter<double[5], void (*)(double&)>(arr3, 5, increment<double>);
-	display<double[5]>(arr3, 5);
+	std::cout << "Doubles: " << std::endl;
+	double arr3[] = {4354.453, 5552.124, 44516.5434, 3437.3446, 484.47};
+	iter(arr3, 5, devideRand);
 
-	/* array of 3 characters with implicite instantiation */
+	std::cout << "Characters: " << std::endl;
 	char arr4[] = {'a', 'b', 'c'};
-	iter(arr4, 3, increment<char>);
-	display(arr4, 3);
+	iter(arr4, 3, devideRand);
 
 	return (0);
 }
