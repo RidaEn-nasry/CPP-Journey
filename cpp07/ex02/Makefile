@@ -1,29 +1,36 @@
-NAME = arrays
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ren-nasr <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/07/02 21:52:36 by ren-nasr          #+#    #+#              #
+#    Updated: 2022/07/03 18:18:53 by ren-nasr         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SCRS = main.cpp Array.cpp 
-INCLUDES = ./includes/Array.hpp
-CC = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-INCS = -I./includes/
+NAME=arrays
+CXX = c++
+CXXFLAGS=-Wall -Wextra -Werror -std=c++98 
+INCLUDES=-I./includes
+INCS=./includes/Array.hpp
+SRCS=main.cpp
 
-OBJS = $(SRCS:.cpp=.o)
+OBJS= $(SRCS:.cpp=.o)
 
 %.o: %.cpp
-	$(CC) $(SRCS) $(CXXFLAFS) $(INCS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-$(NAME): $(OBJS) $(INCLUDES)
-	@echo $(OBJS)
-	$(CC) $(OBJS) -o $@
+$(NAME): $(OBJS) $(INCS)
+	$(CXX) $(OBJS) -o $@
 
 clean:
-	$(RM) $(OBJS)
-
+	rm -f $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
 re: fclean $(NAME)
 
-
-
-	
+.PHONY: clean fclean re
